@@ -1,0 +1,6 @@
+.simple-animation {
+  -webkit-animation: fadeIn 200ms;
+  -moz-animation: fadeIn 200ms;
+  -ms-animation: fadeIn 200ms;
+  animation: fadeIn 200ms;
+};
