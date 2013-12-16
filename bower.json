@@ -1,0 +1,20 @@
+{
+  "name": "angularAnimationEvents",
+  "version": "0.0.0",
+  "main": "./dist/angularAnimationEvents.js",
+  "description": "A directive to let elements emit/broadcast CSS3 animation events",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jpettersson/angularAnimationEvents.git"
+  },
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-mocks": "*",
+    "animate.css": "git@github.com:daneden/animate.css.git#3.0.0"
+  },
+  "ignore": [
+    "node_modules",
+    "components",
+    "lib"
+  ]
+}
