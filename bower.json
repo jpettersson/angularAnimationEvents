@@ -8,8 +8,8 @@
     "url": "git@github.com:jpettersson/angularAnimationEvents.git"
   },
   "dependencies": {
-    "angular": "~1.2.0",
-    "angular-mocks": "*",
+    "angular": "1.2.4",
+    "angular-animate": "~1.2.3",
     "animate.css": "git@github.com:daneden/animate.css.git#3.0.0"
   },
   "ignore": [
