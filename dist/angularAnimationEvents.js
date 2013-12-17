@@ -4,7 +4,7 @@
 
   module.constant("CAEEventList", [
     "webkit{{type}}End",
-    "{{type | lowercase}}End",
+    "{{type | lowercase}}end",
     "o{{type}}End",
     "MS{{type}}End"
   ]);
@@ -18,7 +18,8 @@
 
       for(var i=0;i<subs.length;i++) {
         iElement[0].addEventListener(subs[i], function(evt) {
-          scope[eventFunc](eventType.toLowerCase().concat('End'), evt);
+          var eventName = eventType.toLowerCase().concat('End');
+          scope[eventFunc](eventName, evt);
         })
       }
     };
