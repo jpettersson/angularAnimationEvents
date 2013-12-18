@@ -50,16 +50,16 @@
 
       var module = angular.module('app', ['ngAnimate', 'angularAnimationEvents']);
 
-      module.controller('AppCtrl', function($rootScope, $scope, $timeout) {
-        $rootScope.features = 0;
-        $rootScope.confirmedEmissions = 0;
-        $rootScope.confirmedBroadcasts = 0;
+      module.controller('AppCtrl', function($scope, $timeout) {
+        window.testResults = {
+          features: 0,
+          confirmedEmissions: 0,
+          confirmedBroadcasts: 0
+        };
 
         $timeout(function() {
           $scope.isVisible = true;
         }, 300);
-
-        console.log($rootScope);
       });
 
       module.directive('someCoolSection', function(){
@@ -70,37 +70,37 @@
         };
       });
 
-      module.directive('someCoolFeature', function($rootScope) {
+      module.directive('someCoolFeature', function() {
         return {
           restrict: 'A',
           scope: true,
           link: function() {
-            $rootScope.features++;
+            window.testResults.features++;
           }
         }
       });
 
-      module.directive('emitWatcher', function($rootScope){
+      module.directive('emitWatcher', function(){
         return {
           restrict: 'A',
           scope: true,
           link: function(scope, iElement, attrs) {
             scope.$on('animationEnd', function(evt) {
               console.log('EmitWatcher', evt);
-              $rootScope.confirmedEmissions++;
+              window.testResults.confirmedEmissions++;
             });
           }
         }
       });
 
-      module.directive('broadcastWatcher', function($rootScope){
+      module.directive('broadcastWatcher', function(){
         return {
           restrict: 'A',
           scope: true,
           link: function(scope, iElement, attrs) {
             scope.$on('animationEnd', function(evt) {
               console.log('BroadcastWatcher', evt);
-              $rootScope.confirmedBroadcasts++;
+              window.testResults.confirmedBroadcasts++;
             });
           }
         }

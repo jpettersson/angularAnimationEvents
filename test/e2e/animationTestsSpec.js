@@ -1,11 +1,27 @@
 describe('E2E: Testing animation callbacks', function() {
-  it('should greet the named user', function() {
-    browser.get('http://');
+  var ptor;
 
-    element(by.model('yourName')).sendKeys('Julie');
+  beforeEach(function() {
+    ptor = protractor.getInstance();
+  });
 
-    var greeting = element(by.binding('yourName'));
+  it('should broadcast and emit animationEnd events', function() {
+    browser.get('/');
+    var result;
 
-    expect(greeting.getText()).toEqual('Hello Julie!');
+    var result = ptor.executeAsyncScript(function() {
+      var callback = arguments[arguments.length - 1];
+
+      setTimeout(function() {
+        callback(window.testResults);
+      }, 1000);
+    });
+
+    result.then(function(value) {
+      console.log(value);
+      expect(value.features).toEqual(2);
+      expect(value.confirmedBroadcasts + value.confirmedEmissions).toEqual(2);
+    });
+
   });
 });
