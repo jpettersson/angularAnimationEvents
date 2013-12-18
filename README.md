@@ -5,8 +5,20 @@ That's it, super small. Not fancy.
 
 ## Install
 
+1: With Bower
+
+``bower install angularCssEvents``
+
+2: Include this file in your project:
+
 ```
-bower install angularCssEvents
+dist/angularAnimationEvents.js
+```
+
+3: Import the module:
+
+```
+var app = angular.module('app', ['angularAnimationEvents']);
 ```
 
 ## Usage
