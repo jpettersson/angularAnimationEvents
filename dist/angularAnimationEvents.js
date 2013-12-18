@@ -9,7 +9,7 @@
     "MS{{type}}End"
   ]);
 
-  module.service("CAEListenerService", function($interpolate, CAEEventList) {
+  module.service("CAEListenerService", ['$interpolate', 'CAEEventList', function($interpolate, CAEEventList) {
     this.observe = function(iElement, scope, eventFunc, eventType) {
       var subs = CAEEventList.map(function(a){
         var func = $interpolate(a);
@@ -23,7 +23,7 @@
         })
       }
     };
-  });
+  }]);
 
   var types = ['Animation']; //'Transition' is not yet supported
   var methods = ['emit', 'broadcast'];
