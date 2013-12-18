@@ -7,7 +7,7 @@ That's it, super small. Not fancy.
 
 1: With Bower
 
-``bower install angularCssEvents``
+``bower install git@github.com:jpettersson/angularAnimationEvents.git``
 
 2: Include this file in your project:
 
