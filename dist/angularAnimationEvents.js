@@ -25,7 +25,7 @@
     };
   });
 
-  var types = ['Animation', 'Transition'];
+  var types = ['Animation']; //'Transition' is not yet supported
   var methods = ['emit', 'broadcast'];
 
   angular.forEach(types, function(type) {
