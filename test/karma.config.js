@@ -8,17 +8,16 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     
     files: [
-        'bower_components/animate.css/animate.css',
-        'bower_components/angular/angular.js',
-        'bower_components/angular-mocks/angular-mocks.js',
-        'dist/angularAnimationEvents.js',
-        'test/lib/styles.css',
-        'test/*.js'
+        '../bower_components/animate.css/animate.css',
+        '../bower_components/angular/angular.js',
+        '../bower_components/angular-mocks/angular-mocks.js',
+        '../dist/angularAnimationEvents.js',
+        'unit/*Spec.js'
     ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
     // web server port
     port: 9876,
