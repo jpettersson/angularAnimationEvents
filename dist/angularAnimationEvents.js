@@ -25,40 +25,20 @@
     };
   });
 
-  module.directive('emitAnimationEnd', function(CAEListenerService){
-    return {
-      restrict: 'A',
-      link: function(scope, iElement, attrs) {
-        CAEListenerService.observe(iElement, scope, '$emit', 'Animation');
-      }
-    }
-  });
+  var types = ['Animation', 'Transition'];
+  var methods = ['emit', 'broadcast'];
 
-  module.directive('emitTransitionEnd', function(CAEListenerService){
-    return {
-      restrict: 'A',
-      link: function(scope, iElement, attrs) {
-        CAEListenerService.observe(iElement, scope, '$emit', 'Transition');
-      }
-    }
-  });
-
-  module.directive('broadcastAnimationEnd', function(CAEListenerService){
-    return {
-      restrict: 'A',
-      link: function(scope, iElement, attrs) {
-        CAEListenerService.observe(iElement, scope, '$broadcast', 'Animation');
-      }
-    }
-  });
-
-  module.directive('broadcastTransitionEnd', function(CAEListenerService){
-    return {
-      restrict: 'A',
-      link: function(scope, iElement, attrs) {
-        CAEListenerService.observe(iElement, scope, '$broadcast', 'Transition');
-      }
-    }
+  angular.forEach(types, function(type) {
+    angular.forEach(methods, function(method){
+      module.directive(method.concat(type).concat("End"), function(CAEListenerService){
+        return {
+          restrict: 'A',
+          link: function(scope, iElement, attrs) {
+            CAEListenerService.observe(iElement, scope, "$".concat(method), type);
+          }
+        }
+      });
+    });
   });
 
 })();
