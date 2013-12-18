@@ -1,13 +1,12 @@
-## angularCssEvents
+## angularAnimationEvents
 
-Angular directive to emit/broadcast CSS3 animation events
+Angular directive to emit/broadcast CSS3 animation events.<br />
+That's it, super small. Not fancy.
 
 ## Install
 
 ```
 bower install angularCssEvents
-or
-npm install angularCssEvents
 ```
 
 ## Usage
@@ -55,7 +54,7 @@ module.directive('myFeature', function() {
 
 ```
 
-For a working example, check out [http://google.com](index.html) in the e2e tests folder.
+For a working example, check out [index.html](https://github.com/jpettersson/angularAnimationEvents/blob/master/test/e2e/app/index.html) in the e2e tests folder.
 
 ## Why?
 
@@ -78,7 +77,7 @@ Feel free to contribute to this super small project.
 **To set up the testing environment:**
 
 ```
-npm install
+npm install .
 bower install
 grunt setup
 ```
