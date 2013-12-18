@@ -76,7 +76,9 @@ It's possible to define callback functions when defining JS animations directly 
 
 I might have missed something obvious, please let me know! 
 
-This solution is quite nice since it's not restricted to only working with ngAnimate, but can be used to detect any CSS3 animationEnd events. It was also great fun to set up the protractor tests to test CSS animations!
+This solution is quite nice since it's not restricted to only working with ngAnimate, but can be used to detect any CSS3 animationEnd events. 
+
+It was also great fun to set up the protractor tests to test CSS animations!
 
 ## Browser compatibility
 
