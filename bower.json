@@ -1,6 +1,6 @@
 {
   "name": "angularAnimationEvents",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/angularAnimationEvents.js",
   "description": "A directive to let elements emit/broadcast CSS3 animation events",
   "repository": {
